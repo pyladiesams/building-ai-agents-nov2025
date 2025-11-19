@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Movie Agent</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; max-width: 860px; margin: 2rem auto; padding: 0 1rem; }
+    header { display: flex; align-items: baseline; gap: .75rem; }
+    h1 { margin: 0; }
+    .muted { color: #555; }
+    form { display: flex; gap: .5rem; margin: 1rem 0; }
+    input[type=text] { flex: 1; padding: .6rem .7rem; font-size: 1rem; }
+    button { padding: .6rem .9rem; font-size: 1rem; cursor: pointer; }
+    .results { margin-top: 1rem; }
+    .card { border: 1px solid #ddd; padding: .75rem; border-radius: .5rem; margin-bottom: .75rem; }
+    .card h3 { margin: 0 0 .35rem 0; }
+    .poster { float: right; margin-left: .75rem; width: 100px; height: auto; border-radius: 4px; }
+    .controls { display: flex; gap: .5rem; margin-top: .5rem; }
+    .status { margin: .5rem 0; color: #333; }
+    .error { color: #b00020; }
+    footer { margin-top: 2rem; color: #555; font-size: .9rem; }
+    code { background: #f6f6f6; padding: .1rem .3rem; border-radius: 3px; }
+    .clearfix::after { content: ""; display: block; clear: both; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎬 Movie Recommendation Agent</h1>
+    <span class="muted">FastAPI demo</span>
+  </header>
+
+  <div class="muted">Type things like: <code>funny space comedies</code>, <code>thrillers with DiCaprio</code>, <code>romance 1999</code>. Commands: <code>more</code>, <code>details N</code>, <code>refine ...</code>, <code>restart</code>.</div>
+
+  <form id="prompt-form" onsubmit="return false;">
+    <input id="prompt" type="text" placeholder="What are you in the mood for?" />
+    <button onclick="send()">Send</button>
+    <button onclick="more()" type="button">More</button>
+  </form>
+
+  <div id="status" class="status"></div>
+  <div id="results" class="results"></div>
+
+  <footer>
+    Backend: llamafile OpenAI-compatible server must be running at <code>__BASE_URL__</code>.
+  </footer>
+
+  <script>
+    async function callApi(text) {
+      const resp = await fetch('/api/message', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ input: text })
+      });
+      const data = await resp.json();
+      return data;
+    }
+
+    async function send() {
+      const el = document.getElementById('prompt');
+      const text = el.value.trim();
+      if (!text) return;
+      el.value = '';
+      const data = await callApi(text);
+      render(data);
+    }
+
+    async function more() {
+      const data = await callApi('more');
+      render(data);
+    }
+
+    function render(data) {
+      const status = document.getElementById('status');
+      const results = document.getElementById('results');
+      if (data.status !== 'ok') {
+        status.innerHTML = '<span class="error">' + (data.message || 'Error') + '</span>';
+        return;
+      }
+      status.textContent = data.message + ' — Filters: ' + data.filters;
+      const arr = data.results || [];
+      results.innerHTML = arr.map((m, i) => `
+        <div class="card clearfix">
+          ${m.poster_url ? `<img class="poster" src="${m.poster_url}" alt="poster" />` : ''}
+          <h3>${i + 1}. ${m.title} ${m.year ? '(' + m.year + ')' : ''}</h3>
+          ${m.genre ? `<div><strong>Genre:</strong> ${m.genre}</div>` : ''}
+          ${m.overview ? `<div>${m.overview}</div>` : ''}
+          <div class="controls">
+            ${m.trailer_url ? `<a href="${m.trailer_url}" target="_blank">Trailer</a>` : ''}
+            ${m.imdb_id ? `<a href="https://www.imdb.com/title/${m.imdb_id}/" target="_blank">IMDb</a>` : ''}
+          </div>
+        </div>
+      `).join('');
+      if (data.has_more) {
+        status.textContent += ' — more available (click More)';
+      }
+    }
+  </script>
+</body>
+</html>

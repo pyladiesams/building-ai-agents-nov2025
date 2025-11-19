@@ -1,0 +1,17 @@
+[project]
+name = "buildingaiagent"
+version = "0.1.0"
+description = "This is my AI agent"
+requires-python = ">=3.13"
+dependencies = [
+  "fastapi>=0.115.0",
+  "uvicorn>=0.30.0",
+]
+
+[project.optional-dependencies]
+# Development/test dependencies. Install with: `pip install -e .[dev]`
+dev = [
+  "pytest>=8.0.0",
+  "httpx>=0.27.0",
+  "requests>=2.31.0",
+]
