@@ -104,7 +104,7 @@ In this exercise, we will start by writing down our AI agent design. You can use
 In this exercise, we will build an AI agent using the tools and user interface we designed in the previous exercise. Before we build it our own, first, look at the code in the [Exercise_2/agent.py](../solutions/Exercise_3/benchmark.py) file and learn how to do it. Here are the highlights:
 
 1) LLM backend (llamafile) client
-    - In the example we used http requests with the backend, alternatively you can also use [OpenAI's python client](https://pypi.org/project/openai/) as llamafile are [compatable with OpenAI's API](https://github.com/Mozilla-Ocho/llamafile?tab=readme-ov-file#json-api-quickstart).
+    - In the example we used http requests with the backend, alternatively you can also use [OpenAI's python client](https://pypi.org/project/openai/) as llamafile are [compatible with OpenAI's API](https://github.com/Mozilla-Ocho/llamafile?tab=readme-ov-file#json-api-quickstart).
     - We will provide system messages (see [line 193]) to the LLM to provide instructions. Notice that we have defined the json format that we required. In this agent we did not need to tell LLM what tools we have available as the role fo the LLM here is to parse the user's prompt into search parameters. If you require the LLM to provide decision or action plans based on the tools then information about the tools should be provided to the LLM here as well.
 
 2) Tools: External data sources
