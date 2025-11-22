@@ -20,7 +20,7 @@ When we talk about AI model, we usually mean a machine learning model that can b
 
 ### Why do we need AI agent?
 
-As a rough analogy, AI models are to AI agents what engines are to cars. Without engines, there would be no cars. Many people knows how to drive a car and get to where they want to be, but they don't know how to make an engines works together with other mechanical parts to make a car, thus making engines useless. Creating an AI agent is like the mechanic building a car, creating a tool that can be used by users who many not have the technical know how of the AI model to get the job done.
+As a rough analogy, AI models are to AI agents what engines are to cars. Without engines, there would be no cars. Many people know how to drive a car and get to where they want to be, but they don't know how to make  engines works together with other mechanical parts to make a car, thus making engines useless. Creating an AI agent is like the mechanic building a car, creating a tool that can be used by users who many not have the technical know how of the AI model to get the job done.
 
 AI agent can also be an end-to-end solution to complete a multi-step task. It can evaluate the intermediate results and make adjustments and repeat the process until the task and requirements are satisfied.
 
