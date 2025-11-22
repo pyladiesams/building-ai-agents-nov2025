@@ -120,7 +120,7 @@ Now try to build your own agent. Start small first then add functionality one by
 
 Just like any other software, we need to test and benchmark the performance of our agent. Treat it like running a machine learning experiment and measure the performance of the model, which is our agent.
 
-The most efficient way to test the performance of our agent is to run it against a significant number of test cases automatically with another Python scripts. Record the results and analyse them. We will perform the same after tweaking with the agent so we can compare the performance of our agent before and after we make changes..
+The most efficient way to test the performance of our agent is to run it against a significant number of test cases automatically with another Python script, record the results and analyse them. We will perform the same after tweaking with the agent so we can compare the performance of our agent before and after we make changes.
 
 ### Performance improvement plans
 
