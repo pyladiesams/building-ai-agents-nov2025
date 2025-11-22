@@ -34,7 +34,7 @@ Hugging Face Hub provides a lot of open sources models that you can use and fine
 
 ### Open source and proprietary models
 
-One limitation of open source model is it may need the proper computing hardware and infrastructure to run the AI models. Although the modern computers these days have multiple cores and are quite powerful. It may still be lagging in running a larger model. Setting a remote AI model server will require technical know-how and also require extra cost. Open sources models may also have limited licenses when use commercially. Make sure always check the usage licenses when downloading an open source model.
+One limitation of open source models is it may need the proper computing hardware and infrastructure to run the AI models. Although the modern computers these days have multiple cores and are quite powerful, it may still be lagging in running a larger model. Setting a remote AI model server will require technical know-how and also require extra cost. Open sources models may also have limited licenses when used commercially. Make sure to always check the usage licenses when downloading an open source model.
 
 ## Exercise 1 - Trying different LLMs on Hugging Face
 
