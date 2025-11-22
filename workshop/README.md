@@ -136,7 +136,7 @@ Focus on what tasks you want the agent to be good at. A good strategy is to star
 
 ## Exercise 3.1 - Benchmark your agent
 
-In [Exercise_3/e2e_test.py](Exercise_3/e2e_test.py), we perform end-to-end tests, and in [Exercise_3/benchmark.py](Exercise_3/benchmark.py), we have provided a simple benchmarking script that is use to test the performance of the example agent in Exercise_2. See [Exercise_3/test_and_benchmark.md](Exercise_3/test_and_benchmark.md) for more details.
+In [Exercise_3/e2e_test.py](../solutions/Exercise_3/e2e_test.py), we perform end-to-end tests, and in [Exercise_3/benchmark.py](../solutions/Exercise_3/benchmark.py), we have provided a simple benchmarking script that is use to test the performance of the example agent in Exercise_2. See [Exercise_3/test_and_benchmark.md](../solutions/Exercise_3/test_and_benchmark.md) for more details.
 
 After that, try adding more test cases in [Exercise_3/test_cases.json](Exercise_3/test_cases.json) and run the testing and benchmarking script. Check the Exercise_3/logs folder to see the results.
 
