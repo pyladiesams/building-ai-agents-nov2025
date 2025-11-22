@@ -72,7 +72,7 @@ Tools can be provided internally in the agent or it can be added with MCP server
 
 ### Using an MCP server
 
-MCP (Model Context Protocol) servers are a way to provide extra tools to the agent on top of the build in ones. Since the MCP standardize the connect between an AI agent and an external application, third party tools can be developed by anyone to extend the capability of the AI agent. The MCP server can be a standalone server or a service that can be used by multiple agents.
+MCP (Model Context Protocol) servers are a way to provide extra tools to the agent on top of the built-in ones. Since the MCP standardize the connect between an AI agent and an external application, third party tools can be developed by anyone to extend the capability of the AI agent. The MCP server can be a standalone server or a service that can be used by multiple agents.
 
 In this workshop we will not use MCP servers, but you can learn more about them in the [MCP documentation](https://github.com/modelcontextprotocol/python-sdk).
 
