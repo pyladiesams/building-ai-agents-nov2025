@@ -1,5 +1,4 @@
 # Building an AI Agent
-### Presentation: [{ YOUR PRESENTATION NAME }](workshop/presentation_template.pdf)
 
 ## Workshop description
 In this workshop, we will first study the relationship between an AI Agent and an AI model. Then, by some hands-on exercises, we will learn how to choose the right model for building your own AI Agent; and how to build an AI Agent from scratch.
@@ -10,7 +9,7 @@ By building an AI Agent and comparing AI models, we will learn more about how an
 
 ## Requirements
 * PyLadies Amsterdam uses [uv](https://docs.astral.sh/uv/) for dependency management
-* Google account if you want to use [Google Colab](https://colab.research.google.com/)
+* Please see [pyproject.toml](solutions/Exercise_2/pyproject.toml) for dependencies
  
 ## Usage
 ### with uv
@@ -22,17 +21,7 @@ cd <name-of-repo>
 # create and activate venv, install dependencies
 uv sync
 ```
-### with Google Colab
-1. Visit [Google Colab](https://colab.research.google.com/)
-2. In the top left corner select "File" &#8594; "Open Notebook"
-3. Under "GitHub", enter the URL of the repo of this workshop
-4. Select one of the notebooks within the repo.
-5. At the top of the notebook, add a Code cell and run the following code:
-```bash
-!git clone <github-url-of-workshop-repo>
-%cd <name-of-repo>
-!pip install -r requirements.txt
-```
+
 ### for a workshop giver
 To get started, open the `pyproject.toml` file and set the required Python version. The pre-selected version 3.8 is generally a safe choice for most use cases.
 
@@ -42,7 +31,7 @@ After you have specified the Python version, you can create a virtual environmen
 Re-watch [this YouTube stream](https://youtube.com/live/H3SKftUjXLg)
 
 ## Credits
-This workshop was set up by @pyladiesams and {your GitHub handler}
+This workshop was set up by @pyladiesams and @Cheukting
 
 ## Appendix
 ### Pre-Commit Hooks
